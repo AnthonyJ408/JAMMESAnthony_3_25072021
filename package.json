@@ -1,0 +1,22 @@
+{
+  "name": "p3_jammes_anthony",
+  "version": "1.0.0",
+  "description": "\"",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyJ408/JAMMESAnthony_3_25072021.git"
+  },
+  "author": "Jammes Anthony",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/AnthonyJ408/JAMMESAnthony_3_25072021/issues"
+  },
+  "homepage": "https://github.com/AnthonyJ408/JAMMESAnthony_3_25072021#readme"
+}
+
