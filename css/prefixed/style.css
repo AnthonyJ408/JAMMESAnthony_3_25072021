@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-body {
-  font-family: "Roboto", sans-serif;
+header {
+  font-family: "Shrikhand", cursive;
+  font-weight: 800;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3Nhc3MvYmFzZS9fcG9saWNlcy5zY3NzIiwiLi4vLi4vc2Fzcy9tYWluLnNjc3MiLCIuLi9zdHlsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQVEsOEVBQUE7QUFDQSw4S0FBQTtBQ0NSO0VBQ0ksaUNBQUE7QUNDSiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3Nhc3MvYmFzZS9fcG9saWNlcy5zY3NzIiwiLi4vLi4vc2Fzcy9sYXlvdXQvX19oZWFkZXIuc2NzcyIsIi4uLy4uL3Nhc3MvdXRpbHMvX21peGlucy5zY3NzIiwiLi4vc3R5bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFRLDhFQUFBO0FBQ0EsOEtBQUE7QUNDUjtFQ0RJLGlDQUFBO0VBQ0EsZ0JBQUE7QUNHSiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
