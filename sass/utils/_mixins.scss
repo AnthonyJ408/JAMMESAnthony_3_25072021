@@ -1,4 +1,12 @@
-@mixin titres {
-    font-family: 'Shrikhand', cursive;
-    font-weight: 800;
+@mixin button {
+    border-radius: 25px;
+    padding: 17px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 50px;
+    background: linear-gradient(to bottom right,$color-secondary, $color-primary);
+    border:unset;
+    box-shadow: 10px 5px 5px lighten($color: black, $amount: 90%);
 }
+
