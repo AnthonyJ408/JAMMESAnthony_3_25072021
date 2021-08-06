@@ -3,24 +3,22 @@
 .header {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
         &__titre {
             font-family: $police-titre;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
         }
-        &__localisation {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-            color: lighten(black,25%);
-            background-color: lighten($color: black, $amount: 90%);
-            width: 100%;
-            justify-content: center;
-            box-shadow: inset 0px 4px 5px -4px #404040;
-            & p {
-                padding-left: 15px;
-            }
+        a {
+            width: unset;
+            position: relative;
+    left: -40%;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+      
+           
+            
         }
 
 }

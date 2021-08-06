@@ -1,0 +1,35 @@
+@import "../utils/variables";
+footer {
+    padding: 20px 5% 20px 5%;
+    background-color: lighten($color: black, $amount: 20%);
+    color:white;
+    a {
+        color: white;
+        width: 100%;
+    }
+    ul {
+        width: 100%;
+        margin-block-start: unset;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        margin-inline-start: unset;
+        margin-inline-end: unset;
+        padding-inline-start: unset;
+    
+    li {
+        list-style: none;
+        width: 100%;
+        margin-top: 2%;
+        i{
+            margin-right: 1%;
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+    h3 {
+        font-family: $police-titre;
+        font-weight: 500;
+        
+    }
+}
