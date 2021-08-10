@@ -8,5 +8,14 @@
     background: linear-gradient(to bottom right,$color-secondary, $color-primary);
     border:unset;
     box-shadow: 10px 5px 5px lighten($color: black, $amount: 90%);
+    transform: scale(1);
+    transition: transform 400ms;
+    transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    cursor: pointer;
+    opacity: 1;
+    &:hover {
+        transform: scale(1.15);
+        opacity: 1;
+    }
 }
 

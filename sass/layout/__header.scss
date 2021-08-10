@@ -5,14 +5,15 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    position: relative;
         &__titre {
             font-family: $police-titre;
             margin-bottom: 10px;
         }
         a {
             width: unset;
-            position: relative;
-    left: -40%;
+            position: absolute;
+    left: 4%;
     font-size: 1.5em;
     text-decoration: none;
     color: black;
