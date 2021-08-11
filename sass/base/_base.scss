@@ -4,6 +4,12 @@ body {
     font-family: $police-texte;
 
 }
+.dimension {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
 section {
     display: flex;
     flex-direction: column;

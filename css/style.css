@@ -60,6 +60,13 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.dimension {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -165,14 +172,14 @@ h3 {
 }
 .restaurant__texte div i {
   color: black;
-  font-size: 2em;
+  font-size: 40px;
 }
 .restaurant__texte div #iweight {
   color: white;
-  font-size: 1.8em;
+  font-size: 36px;
   position: absolute;
   left: 5%;
-  bottom: 5%;
+  bottom: 7%;
 }
 
 .welcome {
@@ -268,20 +275,16 @@ h3 {
   height: 30rem;
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-.entete .coeur {
-  width: 32px;
-  height: 32px;
+  margin-bottom: -5rem;
 }
 .entete img {
   object-fit: cover;
   z-index: 1;
   height: 100%;
   width: 100%;
-  margin-bottom: -4rem;
 }
-.entete__titre {
+
+.titre {
   font-family: "Shrikhand", cursive;
   z-index: 2;
   height: 100%;
@@ -291,18 +294,23 @@ h3 {
   align-items: center;
   padding-top: 1rem;
   background-color: #f0f0f0;
+  width: 100%;
 }
-.entete__titre i {
-  font-size: 2em;
+.titre .coeur {
+  width: 32px;
+  height: 32px;
 }
-.entete__titre #iweightpage {
+.titre i {
+  font-size: 40px;
+}
+.titre #iweightpage {
   position: relative;
-  left: 5%;
+  left: 6%;
   color: #f0f0f0;
-  font-size: 1.8em;
-  bottom: 100%;
+  font-size: 36px;
+  bottom: 124%;
 }
-.entete__titre h2 {
+.titre h2 {
   margin-left: 2%;
   width: 87%;
 }
@@ -334,34 +342,34 @@ h3 {
   box-shadow: 5px 5px 10px #cccccc;
   border-radius: 23px;
   background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__carte:hover {
   cursor: pointer;
 }
 .menu__carte:hover .menu__anim {
-  z-index: 2;
-  width: 30%;
+  transform: translate(-100%);
 }
 .menu__carte:hover .menu__prix {
-  width: 38%;
-}
-.menu__cartehover .menu__texte {
-  width: 40%;
+  transform: translate(-50%);
 }
 .menu__anim {
-  width: 0%;
+  flex: 1;
   background-color: #99E2D0;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0 21px 21px 0;
-  z-index: -1;
-  transition: all 600ms;
+  margin-right: -22%;
+  transition: all 1600ms;
   transition-timing-function: ease-in-out;
 }
 .menu__anim i {
   font-size: 1.5em;
   color: white;
+  transform: rotate(360deg);
+  transition: all 600ms 100ms;
 }
 .menu__texte {
   width: 60%;
@@ -374,12 +382,13 @@ h3 {
   white-space: nowrap;
 }
 .menu__prix {
-  z-index: 1;
-  width: 38%;
+  flex: 2;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   font-weight: 600;
+  transition: all 1600ms;
+  transition-timing-function: ease-in-out;
 }
 .menu__prix p {
   margin-right: 10%;
