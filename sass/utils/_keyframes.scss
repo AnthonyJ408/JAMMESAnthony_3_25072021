@@ -1,19 +1,33 @@
-@keyframes progress-heart {
+@keyframes carte-anim {
     0% {
-        transform: scaleY(0);
+        opacity: 0; 
+       margin-top: 2%;
     }
     17% {
-        transform: scaleY(.18);
+        opacity:.2;
     }
     24% {
-        transform: scaleY(.4);
+        opacity:.4;
     }
     46% {
-        transform: scaleY(.81);
+        opacity:.6;
     }
 
     100% {
-        transform: scaleY(1);
+        opacity:1;
+        margin-top: 0%;
     }
 }
-    
+
+@keyframes opacityframes {
+    0% {
+        opacity: 1;
+        
+    }
+    55% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}

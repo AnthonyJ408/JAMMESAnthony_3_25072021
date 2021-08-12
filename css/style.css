@@ -60,6 +60,10 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
 }
+body html, body body, body p, body ol, body ul, body li, body dl, body dt, body dd, body blockquote, body figure, body fieldset, body legend, body textarea, body pre, body iframe, body hr, body h1, body h2, body h3, body h4, body h5, body h6 {
+  margin: 0;
+  padding: 0;
+}
 
 .dimension {
   display: flex;
@@ -74,6 +78,7 @@ section {
   flex-wrap: nowrap;
   align-items: flex-start;
   width: 100%;
+  justify-content: space-around;
 }
 section h2 {
   margin-left: 5%;
@@ -100,21 +105,34 @@ h3 {
   font-weight: 600;
 }
 
-@keyframes progress-heart {
+@keyframes carte-anim {
   0% {
-    transform: scaleY(0);
+    opacity: 0;
+    margin-top: 2%;
   }
   17% {
-    transform: scaleY(0.18);
+    opacity: 0.2;
   }
   24% {
-    transform: scaleY(0.4);
+    opacity: 0.4;
   }
   46% {
-    transform: scaleY(0.81);
+    opacity: 0.6;
   }
   100% {
-    transform: scaleY(1);
+    opacity: 1;
+    margin-top: 0%;
+  }
+}
+@keyframes opacityframes {
+  0% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .localisation {
@@ -126,6 +144,7 @@ h3 {
   width: 100%;
   justify-content: center;
   box-shadow: inset 0px 4px 5px -4px #404040;
+  padding: 20px 0 20px 0;
 }
 .localisation p {
   padding-left: 15px;
@@ -147,10 +166,12 @@ h3 {
   box-shadow: 5px 5px 10px #cccccc;
   border-radius: 20px;
   height: 250px;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
 }
 .restaurant__article:hover {
   box-shadow: 5px 5px 15px #b3b3b3, -5px -5px 15px #b3b3b3;
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 .restaurant__article--new {
   position: absolute;
@@ -174,31 +195,31 @@ h3 {
   border-radius: 20px 20px 0px 0px;
 }
 .restaurant__texte {
+  height: 35%;
   color: black;
   position: relative;
-  padding: 15px;
   background-color: white;
   border-radius: 0 0 23px 23px;
-}
-.restaurant__texte h3 {
-  margin: 0px 0px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 20px;
 }
 .restaurant__texte p {
-  margin: 10px 0 15px 0;
   font-size: 1em;
 }
 .restaurant__texte div {
   position: absolute;
   right: 6%;
-  top: 25%;
+  top: 30%;
 }
 .restaurant__texte div i {
-  font-size: 40px;
+  font-size: 31px;
   color: white;
   position: relative;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   z-index: 0;
-  transition: text-shadow 500ms ease-in-out;
+  transition: text-shadow 400ms ease-in-out;
 }
 .restaurant__texte div i:hover {
   cursor: pointer;
@@ -218,7 +239,7 @@ h3 {
   opacity: 0;
   transform-origin: bottom;
   transform: scale(0);
-  transition: all 500ms ease-in-out;
+  transition: all 400ms ease-in-out;
   text-shadow: none;
   z-index: 1;
   background-clip: text;
@@ -249,6 +270,7 @@ h3 {
 }
 .welcome__button {
   border-radius: 30px;
+  width: 50%;
   padding: 17px;
   color: white;
   font-size: 1.2em;
@@ -263,6 +285,7 @@ h3 {
   cursor: pointer;
   box-shadow: 5px 5px 10px #cccccc;
   opacity: 1;
+  width: unset;
   margin-bottom: 6rem;
 }
 .welcome__button:hover {
@@ -294,9 +317,11 @@ h3 {
   font-size: 1.3em;
   background-color: #f2f2f2;
   transition: all 300ms ease-in;
+  transform: scale(1);
 }
 .fonctionnement ol li:hover {
   background: #e4d5f6;
+  transform: scale(1.05);
   opacity: 0.8;
 }
 .fonctionnement ol li:hover i {
@@ -356,12 +381,12 @@ h3 {
   z-index: 1;
 }
 .titre i {
-  font-size: 40px;
+  font-size: 31px;
   color: white;
   position: relative;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   z-index: 0;
-  transition: text-shadow 500ms ease-in-out;
+  transition: text-shadow 400ms ease-in-out;
 }
 .titre i:hover {
   cursor: pointer;
@@ -381,7 +406,7 @@ h3 {
   opacity: 0;
   transform-origin: bottom;
   transform: scale(0);
-  transition: all 500ms ease-in-out;
+  transition: all 400ms ease-in-out;
   text-shadow: none;
   z-index: 1;
   background-clip: text;
@@ -393,10 +418,19 @@ h3 {
   width: 87%;
 }
 
+#menugrand {
+  height: 375px;
+}
+
+#menubouton {
+  height: 425px;
+}
+
 .menu {
   background-color: #f0f0f0;
   padding: 2%;
   width: 96%;
+  height: 300px;
 }
 .menu h5 {
   font-size: 1.1em;
@@ -415,20 +449,34 @@ h3 {
 .menu__carte {
   display: flex;
   width: 98%;
+  height: 75px;
   position: relative;
-  margin: 1%;
   box-shadow: 5px 5px 10px #cccccc;
   border-radius: 23px;
   background-color: white;
   overflow: hidden;
   white-space: nowrap;
+  opacity: 1;
+  transform-origin: bottom;
+}
+.menu__carte--1 {
+  animation: carte-anim 600ms 200ms ease-out both;
+}
+.menu__carte--2 {
+  animation: carte-anim 600ms 400ms ease-in-out both;
+}
+.menu__carte--3 {
+  animation: carte-anim 600ms 600ms ease-in-out both;
+}
+.menu__carte--4 {
+  animation: carte-anim 600ms 800ms ease-in-out both;
 }
 .menu__carte:hover {
   cursor: pointer;
   box-shadow: 5px 5px 15px #b3b3b3, -5px -5px 15px #b3b3b3;
 }
 .menu__carte:hover .menu__anim {
-  transform: translate(-100%);
+  transform: translate(-110%);
 }
 .menu__carte:hover .menu__anim i {
   transform: rotate(1turn);
@@ -455,16 +503,21 @@ h3 {
 }
 .menu__texte {
   width: 60%;
-  margin-left: 2%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .menu__texte p {
-  font-size: 1em;
+  font-size: 0.9em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 .menu__prix {
   flex: 2;
+  margin-bottom: 10px;
+  margin-right: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -478,12 +531,13 @@ h3 {
 .menu .commander {
   display: flex;
   width: 100%;
+  height: 75px;
   justify-content: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  padding-top: 50px;
 }
 .menu .commander .button {
   border-radius: 30px;
+  width: 50%;
   padding: 17px;
   color: white;
   font-size: 1.2em;
@@ -498,13 +552,29 @@ h3 {
   cursor: pointer;
   box-shadow: 5px 5px 10px #cccccc;
   opacity: 1;
-  padding-left: 4%;
-  padding-right: 4%;
 }
 .menu .commander .button:hover {
   background: linear-gradient(to bottom right, #9356DC, #FF79DA);
   box-shadow: 5px 5px 15px #b3b3b3, -5px -5px 15px #b3b3b3;
   opacity: 0.8;
+}
+
+.corps {
+  animation: overflow-body 0.01s 1.5s both;
+}
+.corps .logo {
+  background-color: #fff;
+  position: fixed;
+  animation: opacityframe 0.01s 1.5s both;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.corps .loading {
+  filter: hue-rotate(180deg);
 }
 
 /*# sourceMappingURL=style.css.map */

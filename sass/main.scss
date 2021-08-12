@@ -15,6 +15,7 @@
 	width: 100%;
 	justify-content: center;
 	box-shadow: inset 0px 4px 5px -4px #404040;
+	padding: 20px 0 20px 0;
 	& p {
 		padding-left: 15px;
 		font-weight: 500;
@@ -35,10 +36,12 @@
 		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
 		border-radius: 20px;
 		height: 250px;
+		transform: scale(1);
+		transition: all 300ms ease-in-out ;
 		&:hover{
 			box-shadow: 5px 5px 15px lighten($color: black, $amount: 70%),
 			 -5px -5px 15px lighten($color: black, $amount: 70%);
-			 opacity: 0.8;
+			 transform: scale(1.05);
 		}
 		&--new {
 			position: absolute;
@@ -63,22 +66,22 @@
 		}
 	}
 	&__texte {
+		height: 35%;
 		color: black;
 		position: relative;
-		padding: 15px;
 		background-color: white;
 		border-radius: 0 0 23px 23px;
-		h3 {
-			margin: 0px 0px 5px 0px;
-		}
+		display: flex;
+		flex-direction: column;
+    	justify-content: space-evenly;
+		padding-left: 20px;
 		p {
-			margin: 10px 0 15px 0;
 			font-size: 1em;
 		}
 		div {
 			position: absolute;
 			right: 6%;
-			top: 25%;
+			top: 30%;
 			i {
 				@include coeur;
 			}
@@ -108,6 +111,7 @@
 	}
 	&__button {
 		@include button;
+		width: unset;
 		margin-bottom: 6rem;
 	}
 }
@@ -133,8 +137,10 @@
 			font-size: 1.3em;
 			background-color: lighten($color: black, $amount: 95%);
 			transition: all 300ms ease-in;
+			transform: scale(1);
 			&:hover{
 				background: lighten($color: $color-primary, $amount: 30%);
+				transform: scale(1.05);
 				opacity: 0.8;
 				& i {
 					color: $color-primary;
@@ -203,11 +209,18 @@
 		width: 87%
 	}
 }
+#menugrand {
+	height: 375px;
+}
+#menubouton{
+	height: 425px;
+}
 
 .menu {
 	background-color: $color-background;
 	padding: 2%;
 	width: 96%;
+	height: 300px;
 	h5 {
 		font-size: 1.1em;
 		margin-bottom: 1%;
@@ -225,19 +238,34 @@
 	&__carte {
 		display: flex;
 		width: 98%;
+		height: 75px;
 		position: relative;
-		margin: 1%;
 		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
 		border-radius: 23px;
 		background-color: white;
 		overflow: hidden;
 		white-space: nowrap;
+		opacity: 1;
+		transform-origin: bottom;
+		&--1{
+			animation: $apparition1;
+		}
+		&--2{
+			animation: $apparition2;
+		}
+		&--3{
+			animation: $apparition3;
+		}
+		&--4 {
+			animation: $apparition4;
+		}
+		
 		&:hover {
 			cursor: pointer;
 			box-shadow: $shadow;
 		}
 		&:hover .menu__anim {
-			transform: translate(-100%);
+			transform: translate(-110%);
 			& i {
 				transform: rotate(1turn);
 			}
@@ -265,9 +293,12 @@
 	}
 	&__texte {
 		width: 60%;
-		margin-left: 2%;
+		margin-left: 20px;
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: space-evenly;
 		p {
-			font-size: 1em;
+			font-size: .9em;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
@@ -275,6 +306,8 @@
 	}
 	&__prix {
 		flex: 2;
+		margin-bottom: 10px;
+		margin-right: 10px;
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
@@ -288,13 +321,17 @@
 	.commander {
 		display: flex;
 		width: 100%;
+		height: 75px;
 		justify-content: center;
-		margin-top: 5%;
-		margin-bottom: 5%;
-		.button {
+		padding-top: 50px;
+		.button {	
 			@include button;
-			padding-left: 4%;
-			padding-right: 4%;
+		
 		}
 	}
 }
+.corps {
+	animation: overflow-body .01s 1.5s both;
+	@include loading-spinner;
+}
+
