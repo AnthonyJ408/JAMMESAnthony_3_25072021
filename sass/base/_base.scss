@@ -1,39 +1,44 @@
 body {
-    width: 100%;
-    margin: 0px;
-    font-family: $police-texte;
+	width: 100%;
+	margin: 0px;
+	font-family: $police-texte;
+}
 
-}
 .dimension {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
 }
+
 section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;  
-    width: 100%;
-    h2 {
-        
-        margin-left: 5%;
-        margin-bottom: 20px;
-    }
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	width: 100%;
+	h2 {
+		margin-left: 5%;
+		margin-bottom: 20px;
+	}
 }
+
 h2 {
-    font-size: 1.7em;
-    font-weight: 800;} 
-html {
-        box-sizing: border-box;
- }
- a{
-    text-decoration: none;
-    width: 100%;
-    color: black;
+	font-size: 1.7em;
+	font-weight: 800;
 }
+
+html {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	width: 100%;
+	color: black;
+}
+
 h3 {
-    font-size: 1.2em;
-    font-weight: 600;
+	font-size: 1.2em;
+	font-weight: 600;
 }

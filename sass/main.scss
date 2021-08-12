@@ -5,331 +5,296 @@
 @import "./utils/mixins";
 @import "./utils/functions";
 @import "./base/base";
-
+@import "./utils/keyframes";
 .localisation {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-    color: lighten(black,25%);
-    background-color: lighten($color: black, $amount: 90%);
-    width: 100%;
-    justify-content: center;
-    box-shadow: inset 0px 4px 5px -4px #404040;
-    & p {
-        padding-left: 15px;
-        font-weight: 500;
-    }
+	display: flex;
+	align-items: center;
+	font-size: 1.2em;
+	color: lighten(black, 25%);
+	background-color: lighten($color: black, $amount: 90%);
+	width: 100%;
+	justify-content: center;
+	box-shadow: inset 0px 4px 5px -4px #404040;
+	& p {
+		padding-left: 15px;
+		font-weight: 500;
+	}
 }
 
-        .restaurant {
-            background-color:lighten($color: black, $amount: 94%) ;
-            padding: 5% 0 5% 0;
-            
-            &__nav {
-                width: 100%;
-            }
-            &__article {
-            display: flex;
-            width: 90%;
-            position: relative;
-            margin: 5%;
-            box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%) ;
-            border-radius: 20px;
-            height: 250px;
-                &--new {
-                position:absolute;
-                top: 7%;
-                right: 2%;
-                color: darken($color: $color-tertiary, $amount: 30%);
-                background-color: lighten($color: $color-tertiary, $amount: 5%) ;
-                padding:10px 15px 10px 15px ;
-                border-radius: 5px;
-                font-weight: 600;
-                font-size: 1em;
-            }         
-            }
-            &__img {
-                width: 100%;
-                height: 65%;
-                & img {
-                    height: 100%;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 20px 20px 0px 0px;
-                }
-            }
-            &__texte {
-                color: black;
-                position: relative;
-                padding:15px;
-                background-color: white;
-                border-radius: 0 0 23px 23px;
-
-                h3 {
-                    margin: 0px 0px 5px 0px;
-
-                }
-                p {
-                   margin: 10px 0 15px 0; 
-                   font-size: 1em;
-                }
-                div {
-                    position:absolute;
-                    right: 6%;
-                    top:25%;
-                    
-                    i{
-                        color: black;
-                        
-                        font-size: 40px;
-                    }
-                    #iweight {
-                        color: white;
-                        font-size: 36px;
-                        position: absolute;
-                        left: 5%;
-                        bottom: 7%;        
-                    }
-                    
-                }
-            }
-        }
-        .welcome {
-            background-color: lighten($color: black, $amount: 94%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            h2 {
-                    font-size: 1.7em;
-                    width: 60%;
-                    text-align: center;
-                    margin-bottom: 20px;
-                    margin-top: 40px;
-                }
-            P   {
-                width: 70%;
-                text-align: center;
-                font-size: 1.3em;
-                color:lighten($color: black, $amount: 20%);
-                margin: 0px 0px 40px 0px;
-                font-weight: 300;
-            }
-            &__button {
-                @include button;
-                margin-bottom: 6rem;
-            }
-            }
-        .fonctionnement {
-            margin-top: 50px;
-            margin-bottom: 80px;
-             
-            ol {
-            list-style: none;
-            margin-block-start: unset;
-            margin-block-start: unset;
-            margin-block-end: unset;
-            margin-inline-start: unset;
-            margin-inline-end: unset;
-            padding-inline-start: unset;
-            width: 100%;
-    
-            li {
-                width: 90%;
-                margin: 2% 2% 5% 5%;
-                padding: 30px 0% 30px 0% ;
-               box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%) ;
-               border: lighten($color: black, $amount: 95%) solid 5px;
-                border-radius: 30px;
-                font-size: 1.3em;
-                background-color:lighten($color: black, $amount: 95%) ;
-                
-            }
-            i {
-                font-size: 1.3em;
-                color:lighten($color: black, $amount: 40%);
-            }
-
-            p {
-                display: inline;
-                margin-left: 7%;
-                width: 100%;
-                font-weight: 500;
-                
-              
-            }
-
-            & .liste {
-            background-color: $color-primary;
-            color: white;
-            padding:.4rem .7rem .4rem .7rem;
-            border-radius: 100%;
-            margin-right: 2%;
-            position:relative;
-                left: -15px;
-                margin-left: unset;
-            }
-             }
-            }
-    .entete {
-        width: 100%;
-        height: 30rem;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: -5rem;
-         img{
-            object-fit: cover;
-            z-index: 1;
-            height: 100%;
-            width: 100%;
-        
-        }
-    }
-    
-        
-       
-        .titre {
-            font-family: $police-titre;
-            z-index: 2;
-            height: 100%;
-            border-radius: 25px 25px 0 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding-top: 1rem;
-            background-color: $color-background; 
-            width: 100%;
-               .coeur {
-    width: 32px ;
-    height: 32px;
-
-        }
-            i{
-                
-                font-size: 40px;
-            }
-            #iweightpage {
-                position: relative;
-    left: 6%;
-    color: #f0f0f0;
-    font-size: 36px;
-    bottom: 124%;
+.restaurant {
+	background-color: lighten($color: black, $amount: 94%);
+	padding: 5% 0 5% 0;
+	&__nav {
+		width: 100%;
+	}
+	&__article {
+		display: flex;
+		width: 90%;
+		position: relative;
+		margin: 5%;
+		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
+		border-radius: 20px;
+		height: 250px;
+		&:hover{
+			box-shadow: 5px 5px 15px lighten($color: black, $amount: 70%),
+			 -5px -5px 15px lighten($color: black, $amount: 70%);
+			 opacity: 0.8;
+		}
+		&--new {
+			position: absolute;
+			top: 7%;
+			right: 2%;
+			color: darken($color: $color-tertiary, $amount: 30%);
+			background-color: lighten($color: $color-tertiary, $amount: 5%);
+			padding: 10px 15px 10px 15px;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 1em;
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 65%;
+		& img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 20px 20px 0px 0px;
+		}
+	}
+	&__texte {
+		color: black;
+		position: relative;
+		padding: 15px;
+		background-color: white;
+		border-radius: 0 0 23px 23px;
+		h3 {
+			margin: 0px 0px 5px 0px;
+		}
+		p {
+			margin: 10px 0 15px 0;
+			font-size: 1em;
+		}
+		div {
+			position: absolute;
+			right: 6%;
+			top: 25%;
+			i {
+				@include coeur;
+			}
+		}
+	}
 }
 
-            
-            h2 {
-                margin-left: 2%;
-                width: 87%
-            }
-
-        }
-    
-    .menu {
-        background-color: $color-background;
-        padding: 2%;
-        width: 96%;
-        h5 {
-            font-size: 1.1em; 
-             margin-bottom: 1%;
-             text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        h4{
-            color: lighten(black,15%);
-            font-weight: 400;
-            border-bottom: 3px solid $color-tertiary;
-            width: 35px;
-            font-size: 1.2em;
-          
-
-
-        }
-    
-    &__carte {
-    display: flex;
-            width: 98%;
-            position: relative;
-            margin: 1%;
-            box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%) ;
-            border-radius: 23px;
-            background-color: white;
-            overflow: hidden;
-            white-space: nowrap;
-            &:hover {
-                cursor: pointer;
-            }
-            
-            &:hover  .menu__anim {
-                
-            transform: translate(-100%);
-                    
-            }
-            &:hover  .menu__prix {
-                transform: translate(-50%)
-                
-            }
-            &:hover .menu__texte {
-                
-            }
-            
-    }
-    &__anim{
-         flex: 1;
-        background-color: $color-tertiary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0 21px  21px 0;
-         margin-right: -22%;
-    transition: all 1600ms;
-    transition-timing-function: ease-in-out;
-        i{
-            font-size: 1.5em;
-            color: white;
-            transform: rotate(360deg);
-            transition: all 600ms 100ms;
-        }
-
-    }
-    &__texte {
-        width: 60%;
-        margin-left: 2%;
-        
-        
-        p{
-            font-size: 1em;
-           
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-    }
-    &__prix {
-        
-        flex: 2;
-        display: flex;
-        justify-content: flex-end;
-    align-items: flex-end;
-    font-weight: 600;
-    transition: all 1600ms;
-    transition-timing-function: ease-in-out;
-    p {
-        margin-right: 10%;
-    
-    }     
-    }
-    .commander{
-        display: flex;
-        width: 100%;
-         justify-content: center;
-         margin-top: 5%;
-         margin-bottom: 5%;
-    .button {
-        @include button;
-        padding-left: 4%;
-        padding-right: 4%;
-        
-    }
+.welcome {
+	background-color: lighten($color: black, $amount: 94%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	h2 {
+		font-size: 1.7em;
+		width: 60%;
+		text-align: center;
+		margin-bottom: 20px;
+		margin-top: 40px;
+	}
+	P {
+		width: 70%;
+		text-align: center;
+		font-size: 1.3em;
+		color: lighten($color: black, $amount: 20%);
+		margin: 0px 0px 40px 0px;
+		font-weight: 300;
+	}
+	&__button {
+		@include button;
+		margin-bottom: 6rem;
+	}
 }
+
+.fonctionnement {
+	margin-top: 50px;
+	margin-bottom: 80px;
+	ol {
+		list-style: none;
+		margin-block-start: unset;
+		margin-block-start: unset;
+		margin-block-end: unset;
+		margin-inline-start: unset;
+		margin-inline-end: unset;
+		padding-inline-start: unset;
+		width: 100%;
+		li {
+			width: 90%;
+			margin: 2% 2% 5% 5%;
+			padding: 30px 0% 30px 0%;
+			box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
+			border-radius: 30px;
+			font-size: 1.3em;
+			background-color: lighten($color: black, $amount: 95%);
+			transition: all 300ms ease-in;
+			&:hover{
+				background: lighten($color: $color-primary, $amount: 30%);
+				opacity: 0.8;
+				& i {
+					color: $color-primary;
+				}
+			}
+		}
+		i {
+			font-size: 1.3em;
+			color: lighten($color: black, $amount: 40%);
+		}
+		p {
+			display: inline;
+			margin-left: 7%;
+			width: 100%;
+			font-weight: 500;
+		}
+		& .liste {
+			background-color: $color-primary;
+			color: white;
+			padding: .4rem .7rem .4rem .7rem;
+			border-radius: 100%;
+			margin-right: 2%;
+			position: relative;
+			left: -15px;
+			margin-left: unset;
+		}
+	}
+}
+
+.entete {
+	width: 100%;
+	height: 30rem;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: -5rem;
+	img {
+		object-fit: cover;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.titre {
+	font-family: $police-titre;
+	z-index: 1;
+	height: 100%;
+	border-radius: 25px 25px 0 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-top: 1rem;
+	background-color: $color-background;
+	width: 100%;
+	.coeur {
+		width: 35px;
+		height: 35px;
+		padding: 20px;
+		z-index: 1;
+	}
+	i {
+		@include coeur;
+	}
+	h2 {
+		margin-left: 2%;
+		width: 87%
+	}
+}
+
+.menu {
+	background-color: $color-background;
+	padding: 2%;
+	width: 96%;
+	h5 {
+		font-size: 1.1em;
+		margin-bottom: 1%;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	h4 {
+		color: lighten(black, 15%);
+		font-weight: 400;
+		border-bottom: 3px solid $color-tertiary;
+		width: 35px;
+		font-size: 1.2em;
+	}
+	&__carte {
+		display: flex;
+		width: 98%;
+		position: relative;
+		margin: 1%;
+		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
+		border-radius: 23px;
+		background-color: white;
+		overflow: hidden;
+		white-space: nowrap;
+		&:hover {
+			cursor: pointer;
+			box-shadow: $shadow;
+		}
+		&:hover .menu__anim {
+			transform: translate(-100%);
+			& i {
+				transform: rotate(1turn);
+			}
+		}
+		&:hover .menu__prix {
+			transform: translate(-50%)
+		}
+	}
+	&__anim {
+		flex: 1;
+		background-color: $color-tertiary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0 21px 21px 0;
+		margin-right: -22%;
+		transition: all 1000ms;
+		transition-timing-function: ease-in-out;
+		i {
+			font-size: 1.5em;
+			color: white;
+			transform: rotate(-180deg);
+			transition: all 1000ms 100ms ease-in-out;
+		}
+	}
+	&__texte {
+		width: 60%;
+		margin-left: 2%;
+		p {
+			font-size: 1em;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+	}
+	&__prix {
+		flex: 2;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		font-weight: 600;
+		transition: all 1000ms;
+		transition-timing-function: ease-in-out;
+		p {
+			margin-right: 10%;
+		}
+	}
+	.commander {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 5%;
+		margin-bottom: 5%;
+		.button {
+			@include button;
+			padding-left: 4%;
+			padding-right: 4%;
+		}
+	}
 }

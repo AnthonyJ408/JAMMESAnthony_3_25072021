@@ -4,4 +4,4 @@ $color-tertiary:#99E2D0;
 $police-titre:'Shrikhand', cursive;
 $police-texte:'Roboto', sans-serif;
 $color-background:lighten($color: black, $amount: 94%);
-
+$shadow:5px 5px 15px lighten($color: black, $amount: 70%), -5px -5px 15px lighten($color: black, $amount: 70%);

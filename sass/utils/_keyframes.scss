@@ -1,0 +1,19 @@
+@keyframes progress-heart {
+    0% {
+        transform: scaleY(0);
+    }
+    17% {
+        transform: scaleY(.18);
+    }
+    24% {
+        transform: scaleY(.4);
+    }
+    46% {
+        transform: scaleY(.81);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+    
