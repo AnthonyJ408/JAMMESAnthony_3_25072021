@@ -56,21 +56,7 @@
 	}
 }
 @mixin loading-spinner {
-	.logo {
-		background-color: #fff;
-		position : fixed;
-		animation: opacityframe .01s 1.5s both;
-		z-index: 10;
-		height : 100%;
-		width : 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	  }
-	  
-	  .loading {
-		filter: hue-rotate(180deg);
-	  }
+
 } 
 @mixin reset {
 	html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
