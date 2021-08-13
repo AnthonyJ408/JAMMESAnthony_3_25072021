@@ -1,113 +1,124 @@
 @keyframes carte-anim {
-    0% {
-        opacity: 0; 
-       margin-top: 2%;
-    }
-    17% {
-        opacity:.2;
-    }
-    24% {
-        opacity:.4;
-    }
-    46% {
-        opacity:.6;
-    }
-
-    100% {
-        opacity:1;
-        margin-top: 0%;
-    }
+	0% {
+		opacity: 0;
+		margin-top: 2%;
+	}
+	17% {
+		opacity: .2;
+	}
+	24% {
+		opacity: .4;
+	}
+	46% {
+		opacity: .6;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0%;
+	}
 }
 
 @keyframes lettres {
-    0% {
-        font-size: 0em;
-        
-    }
-   
-    100% {
-        font-size: 5em;
-    }
+	0% {
+		font-size: 0em;
+	}
+	100% {
+		font-size: 3em;
+	}
 }
+
+@keyframes lettrespc {
+	0% {
+		font-size: 0em;
+	}
+	100% {
+		font-size: 5em;
+	}
+}
+
 @keyframes invisible {
-    0% {
-        background-clip: text;
+	0% {
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-        visibility: visible;
-        display: contents;
-        opacity: 0;
-    }
-    100% {
-        background-clip: text;
+		visibility: visible;
+		display: contents;
+		opacity: 0;
+	}
+	100% {
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-        visibility: hidden;
-        display: none;
-        opacity: 1;
-    }
+		visibility: hidden;
+		display: none;
+		opacity: 1;
+	}
 }
+
 @keyframes degrade {
-    0% {
-        background: linear-gradient( 1deg, $color-tertiary, $color-secondary, $color-primary);
-    }
-    25% {
-        background: linear-gradient( 360deg, $color-tertiary, $color-secondary, $color-primary);
-    }
-    50% {
-        background: linear-gradient( 1deg,$color-secondary, $color-primary,$color-tertiary);
-    }
-    75% {
-        background: linear-gradient( 360deg, $color-primary, $color-tertiary, $color-secondary);
-    }
-    100%{
-        background: linear-gradient( 1deg, $color-secondary ,$color-tertiary, $color-primary);
-    } 
+	0% {
+		background: linear-gradient( 1deg, $color-tertiary, $color-secondary, $color-primary);
+	}
+	25% {
+		background: linear-gradient( 360deg, $color-tertiary, $color-secondary, $color-primary);
+	}
+	50% {
+		background: linear-gradient( 1deg, $color-secondary, $color-primary, $color-tertiary);
+	}
+	75% {
+		background: linear-gradient( 360deg, $color-primary, $color-tertiary, $color-secondary);
+	}
+	100% {
+		background: linear-gradient( 1deg, $color-secondary, $color-tertiary, $color-primary);
+	}
 }
+
 @keyframes loading-spinner {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes loading-grow {
-      0% {
-          transform: scale(0)
-      }
-      100% {
-          transform: scale(2);
-      }
-  }
-  @keyframes loading-movement {
-      0% {
-          transform: translate(-50%, -50%)
-      }
-      100% {
-          transform: translate(50%, 50%);
-      }
-  }
-  @keyframes fonction-anim {
-      0% {
-        background-color: lighten($color: black, $amount: 95%);
-        transform: scale(1);
-        opacity: 1;
-        
-      }
-      100% {
-        background-color: lighten($color: $color-primary, $amount: 30%);
-        transform: scale(1.05);
-        opacity: 0.8;
-        
-      }
-  }
-  @keyframes fonction-i {
-      0% {
-            color: lighten($color: black, $amount: 40%); ;
-      }
-      100% {
-            color: $color-primary;
-      }
-  }
-  
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes loading-grow {
+	0% {
+		transform: scale(0)
+	}
+	100% {
+		transform: scale(2);
+	}
+}
+
+@keyframes loading-movement {
+	0% {
+		transform: translate(-50%, -50%)
+	}
+	100% {
+		transform: translate(50%, 50%);
+	}
+}
+
+@keyframes fonction-anim {
+	0% {
+		background-color: lighten($color: black, $amount: 95%);
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		background-color: lighten($color: $color-primary, $amount: 30%);
+		transform: scale(1.05);
+		opacity: 0.8;
+	}
+}
+
+@keyframes fonction-i {
+	0% {
+		color: lighten($color: black, $amount: 40%);
+		;
+	}
+	100% {
+		color: $color-primary;
+	}
+}

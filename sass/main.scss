@@ -3,54 +3,81 @@
 @import "./layout/_footer";
 @import "./layout/_header";
 @import "./utils/mixins";
-@import "./utils/functions";
 @import "./base/base";
 @import "./utils/keyframes";
 .container {
 	width: 100%;
 	height: 100%;
 	position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	align-content: center;
 	z-index: 5;
 	background: lighten($color: $color-tertiary, $amount: 20%);
 	animation: invisible 0s 3000ms forwards;
 }
+
 .load {
 	width: 100%;
 	height: 30%;
 	position: absolute;
 	font-family: $police-titre;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	align-content: center;
-	animation: loading-spinner 1500ms linear ;
-    
-    &__lettre {
+	animation: loading-spinner 1500ms linear;
+	&__lettre {
 		align-content: center;
 		justify-content: center;
 		align-items: center;
 		display: flex;
-        height: 100%;
-		animation: lettres 1000ms ease-in-out forwards ,
-		degrade 1500ms ease-in-out forwards infinite alternate,
-		 invisible $anim-duration both,
-		 loading-movement 1000ms ease-in-out forwards infinite alternate;
+		height: 100%;
+		animation: lettres 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible $anim-duration both, loading-movement 1000ms ease-in-out forwards infinite alternate;
 		opacity: 0;
 		@for $i from 1 through $nblettre {
-            &--#{$i} {
-                animation-delay: $anim-delay * $i;
-             }
-        }
+			&--#{$i} {
+				animation-delay: $anim-delay * $i;
+			}
+		}
+		@media (min-width: 799px) {
+			animation: lettrespc 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible $anim-duration both, loading-movement 1000ms ease-in-out forwards infinite alternate;
+			@for $i from 1 through $nblettre {
+				&--#{$i} {
+					animation-delay: $anim-delay * $i;
+				}
+			}
+		}
 	}
 }
+
+.grid {
+	grid-template-columns: 1fr;
+	display: grid;
+	@media (min-width: 799px) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.gridpage {
+	grid-template-columns: 1fr;
+	display: grid;
+	width: 100%;
+	@media (min-width: 1024px) {
+		grid-template-columns: 1fr 1fr 1fr;
+		background-color: $color-background;
+	}
+	@media (min-width:799px) and (max-width:1024px) {
+		background-color: $color-background;
+		width: 70%;
+	}
+}
+
 .localisation {
 	display: flex;
 	align-items: center;
@@ -72,6 +99,12 @@
 	padding: 5% 0 5% 0;
 	&__nav {
 		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		width: 100%;
+		@media (min-width: 799px) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 	&__article {
 		display: flex;
@@ -82,11 +115,10 @@
 		border-radius: 20px;
 		height: 250px;
 		transform: scale(1);
-		transition: all 300ms ease-in-out ;
-		&:hover{
-			box-shadow: 5px 5px 15px lighten($color: black, $amount: 70%),
-			 -5px -5px 15px lighten($color: black, $amount: 70%);
-			 transform: scale(1.05);
+		transition: all 300ms ease-in-out;
+		&:hover {
+			box-shadow: 5px 5px 15px lighten($color: black, $amount: 70%), -5px -5px 15px lighten($color: black, $amount: 70%);
+			transform: scale(1.05);
 		}
 		&--new {
 			position: absolute;
@@ -118,7 +150,7 @@
 		border-radius: 0 0 23px 23px;
 		display: flex;
 		flex-direction: column;
-    	justify-content: space-evenly;
+		justify-content: space-evenly;
 		padding-left: 20px;
 		p {
 			font-size: 1em;
@@ -174,11 +206,21 @@
 		padding-inline-start: unset;
 		width: 100%;
 		&:hover .ordre {
-			animation-play-state: running;
-			& i {
-				animation-play-state: running;
+			animation: fonction-anim $anim-durationbis linear backwards;
+			@for $i from 1 through $nbli {
+				&--#{$i} {
+					animation-delay: $anim-delaybis * $i;
+				}
 			}
-	}
+			& i {
+				animation: fonction-i $anim-durationbis linear backwards;
+				@for $i from 1 through $nbli {
+					&--#{$i} {
+						animation-delay: $anim-delaybis * $i;
+					}
+				}
+			}
+		}
 		& .ordre {
 			width: 82%;
 			margin: 30px 5% 30px 5%;
@@ -187,22 +229,10 @@
 			border-radius: 30px;
 			font-size: 1.2em;
 			background-color: lighten($color: black, $amount: 95%);
-			animation: fonction-anim $anim-durationbis linear backwards infinite alternate paused;
-			@for $i from 1 through $nbli {
-				&--#{$i} {
-					animation-delay: $anim-delaybis * $i;
-				 }
-			}
 		}
 		i {
 			font-size: 1.3em;
 			color: lighten($color: black, $amount: 40%);
-			animation: fonction-i $anim-durationbis linear backwards infinite alternate paused;
-			@for $i from 1 through $nbli {
-				&--#{$i} {
-					animation-delay: $anim-delaybis * $i;
-				 }
-			}
 		}
 		p {
 			display: inline;
@@ -247,6 +277,9 @@
 	padding-top: 1rem;
 	background-color: $color-background;
 	width: 100%;
+	@media (min-width: 799px) and (max-width:1024px) {
+		width: 70%;
+	}
 	.coeur {
 		width: 35px;
 		height: 35px;
@@ -261,11 +294,9 @@
 		width: 87%
 	}
 }
+
 #menugrand {
 	height: 375px;
-}
-#menubouton{
-	height: 425px;
 }
 
 .menu {
@@ -298,25 +329,24 @@
 		white-space: nowrap;
 		opacity: 1;
 		transform-origin: bottom;
-		&--1{
+		&--1 {
 			animation: $apparition1;
 		}
-		&--2{
+		&--2 {
 			animation: $apparition2;
 		}
-		&--3{
+		&--3 {
 			animation: $apparition3;
 		}
 		&--4 {
 			animation: $apparition4;
 		}
-		
 		&:hover {
 			cursor: pointer;
 			box-shadow: $shadow;
 		}
 		&:hover .menu__anim {
-				margin: 0;
+			margin: 0;
 			& i {
 				transform: rotate(1turn);
 			}
@@ -341,9 +371,9 @@
 	&__texte {
 		flex: 1;
 		margin-left: 20px;
-    	display: flex;
-    	flex-direction: column;
-    	justify-content: space-evenly;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
 		transition: all 500ms ease-in-out;
 		text-overflow: ellipsis;
 		overflow: hidden;
@@ -368,16 +398,16 @@
 			margin-right: 10px;
 		}
 	}
-	.commander {
-		display: flex;
-		width: 100%;
-		height: 75px;
-		justify-content: center;
-		padding-top: 50px;
-		.button {	
-			@include button;
-		
-		}
-	}
 }
 
+.commander {
+	display: flex;
+	width: 100%;
+	height: 75px;
+	justify-content: center;
+	padding-top: 50px;
+	background-color: $color-background;
+	.button {
+		@include button;
+	}
+}

@@ -8,19 +8,19 @@
          src="https://kit.fontawesome.com/f3cd396271.js"
          crossorigin="anonymous"
          ></script>
-      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="./css/prefixed/style.css">
    </head>
    <body>
       <div class="container">
          <div class="load">
-             <p class="load__lettre--1 load__lettre">o</p>
-             <p class="load__lettre--2 load__lettre">h</p>
-             <p class="load__lettre--3 load__lettre">m</p>
-             <p class="load__lettre--4 load__lettre">y</p>
-             <p class="load__lettre--5 load__lettre">f</p>
-             <p class="load__lettre--6 load__lettre">o</p>
-             <p class="load__lettre--7 load__lettre">o</p>
-             <p class="load__lettre--8 load__lettre">d</p>
+            <p class="load__lettre--1 load__lettre">o</p>
+            <p class="load__lettre--2 load__lettre">h</p>
+            <p class="load__lettre--3 load__lettre">m</p>
+            <p class="load__lettre--4 load__lettre">y</p>
+            <p class="load__lettre--5 load__lettre">f</p>
+            <p class="load__lettre--6 load__lettre">o</p>
+            <p class="load__lettre--7 load__lettre">o</p>
+            <p class="load__lettre--8 load__lettre">d</p>
          </div>
       </div>
       <header class="header">
@@ -31,44 +31,46 @@
          <p>Paris, Belleville</p>
       </div>
       <main>
-         <section class="welcome">
-            <h2>Réservez le menu qui vous convient</h2>
-            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <button class="welcome__button" type="button">       
-            Explorez nos restaurants
-            </button>
-         </section>
-         <section class="fonctionnement">
-            <h2>Fonctionnement</h2>
-            <ol class="fonctionnement">
-               <a href="#">
-                  <li class="ordre ordre--1">
-                     <p class="liste">1</p>
-                     <i class="fas fa-mobile-alt"></i>
-                     <p>Choisissez un restaurant</p>
-                  </li>
-               </a>
-               <a href="#">
-                  <li class="ordre ordre--2">
-                     <p class="liste">2</p>
-                     <i class="fas fa-list-ul"></i>
-                     <p>Composez votre menu</p>
-                  </li>
-               </a>
-               <a href="#">
-                  <li class="ordre ordre--3">
-                     <p class="liste">3</p>
-                     <i class="fas fa-store"></i>
-                     <p>Dégustez au restaurant</p>
-                  </li>
-               </a>
-            </ol>
-         </section>
+         <div class="grid">
+            <section class="welcome">
+               <h2>Réservez le menu qui vous convient</h2>
+               <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+               <button class="welcome__button" type="button">       
+               Explorez nos restaurants
+               </button>
+            </section>
+            <section class="fonctionnement">
+               <h2>Fonctionnement</h2>
+               <ol class="fonctionnement">
+                  <a href="#">
+                     <li class="ordre ordre--1">
+                        <p class="liste">1</p>
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>Choisissez un restaurant</p>
+                     </li>
+                  </a>
+                  <a href="#">
+                     <li class="ordre ordre--2">
+                        <p class="liste">2</p>
+                        <i class="fas fa-list-ul"></i>
+                        <p>Composez votre menu</p>
+                     </li>
+                  </a>
+                  <a href="#">
+                     <li class="ordre ordre--3">
+                        <p class="liste">3</p>
+                        <i class="fas fa-store"></i>
+                        <p>Dégustez au restaurant</p>
+                     </li>
+                  </a>
+               </ol>
+            </section>
+         </div>
          <section class="restaurant">
             <h2>Restaurants</h2>
             <div class="restaurant__nav">
                <article class="restaurant__article">
-                  <a class="restaurant__nav" href="./html/menu_la_palette_du_gout.html">
+                  <a class="restaurant__a" href="./html/menu_la_palette_du_gout.html">
                      <div class="restaurant__img">
                         <img src="./images/Maquettes Ohmyfood/images/restaurants/la_palette_du_gout.jpg" alt="La palette du goût">
                         <p class="restaurant__article--new">Nouveau</p>
@@ -83,7 +85,7 @@
                   </a>
                </article>
                <article class="restaurant__article">
-                  <a class="restaurant__nav" href="./html/menu_la_note_enchantée.html">
+                  <a class="restaurant__a" href="./html/menu_la_note_enchantée.html">
                      <div class="restaurant__img">
                         <img src="./images/Maquettes Ohmyfood/images/restaurants/la_note_enchantée.jpg" alt="La note enchantée">
                         <p class="restaurant__article--new">Nouveau</p>
@@ -98,7 +100,7 @@
                   </a>
                </article>
                <article class="restaurant__article">
-                  <a class="restaurant__nav" href="./html/menu_a_la_française.html">
+                  <a class="restaurant__a" href="./html/menu_a_la_française.html">
                      <div class="restaurant__img">
                         <img src="./images/Maquettes Ohmyfood/images/restaurants/a_la_française.jpg" alt="À la française">
                      </div>
@@ -112,7 +114,7 @@
                   </a>
                </article>
                <article class="restaurant__article">
-                  <a class="restaurant__nav" href="./html/menu_le_delice_des_sens.html">
+                  <a class="restaurant__a" href="./html/menu_le_delice_des_sens.html">
                      <div class="restaurant__img">
                         <img src="./images/Maquettes Ohmyfood/images/restaurants/le_delice_des_sens.jpg" alt="Le délice des sens">
                      </div>

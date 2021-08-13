@@ -4,6 +4,11 @@ body {
 	font-family: $police-texte;
 	@include reset;
 }
+main {
+	@media (min-width:799px)  {
+		background-color: $color-background;
+	}
+}
 
 .dimension {
 	display: flex;
