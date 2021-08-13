@@ -167,30 +167,77 @@ h3 {
     background: linear-gradient(1deg, #FF79DA, #99E2D0, #9356DC);
   }
 }
-@keyframes shadowanim {
+@keyframes loading-spinner {
   0% {
-    text-shadow: 5px 5px #4d4d4d;
+    transform: rotate(0deg);
   }
   100% {
-    text-shadow: 5px 50px #4d4d4d;
+    transform: rotate(360deg);
   }
 }
-.load {
+@keyframes loading-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+@keyframes loading-movement {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+@keyframes fonction-anim {
+  0% {
+    background-color: #f2f2f2;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    background-color: #e4d5f6;
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+@keyframes fonction-i {
+  0% {
+    color: #666666;
+  }
+  100% {
+    color: #9356DC;
+  }
+}
+.container {
   width: 100%;
   height: 100%;
-  z-index: 5;
-  font-family: "Shrikhand", cursive;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  animation: invisible 0s 3000ms forwards;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: 5;
+  background: #e8f9f5;
+  animation: invisible 0s 3000ms forwards;
+}
+
+.load {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  font-family: "Shrikhand", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  animation: loading-spinner 1500ms linear;
 }
 .load__lettre {
   align-content: center;
@@ -198,7 +245,7 @@ h3 {
   align-items: center;
   display: flex;
   height: 100%;
-  animation: lettres 1000ms ease-in-out forwards infinite alternate, degrade 1500ms ease-in-out forwards infinite alternate, invisible 1500ms backwards;
+  animation: lettres 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible 1500ms both, loading-movement 1000ms ease-in-out forwards infinite alternate;
   opacity: 0;
 }
 .load__lettre--1 {
@@ -224,9 +271,6 @@ h3 {
 }
 .load__lettre--8 {
   animation-delay: 1500ms;
-}
-.load__lettre__spinner {
-  position: absolute;
 }
 
 .localisation {
@@ -402,7 +446,13 @@ h3 {
   padding-inline-start: unset;
   width: 100%;
 }
-.fonctionnement ol li {
+.fonctionnement ol:hover .ordre {
+  animation-play-state: running;
+}
+.fonctionnement ol:hover .ordre i {
+  animation-play-state: running;
+}
+.fonctionnement ol .ordre {
   width: 82%;
   margin: 30px 5% 30px 5%;
   padding: 20px 4% 20px 4%;
@@ -410,20 +460,30 @@ h3 {
   border-radius: 30px;
   font-size: 1.2em;
   background-color: #f2f2f2;
-  transition: all 300ms ease-in;
-  transform: scale(1);
+  animation: fonction-anim 2000ms linear backwards infinite alternate paused;
 }
-.fonctionnement ol li:hover {
-  background: #e4d5f6;
-  transform: scale(1.05);
-  opacity: 0.8;
+.fonctionnement ol .ordre--1 {
+  animation-delay: 666.6666666667ms;
 }
-.fonctionnement ol li:hover i {
-  color: #9356DC;
+.fonctionnement ol .ordre--2 {
+  animation-delay: 1333.3333333333ms;
+}
+.fonctionnement ol .ordre--3 {
+  animation-delay: 2000ms;
 }
 .fonctionnement ol i {
   font-size: 1.3em;
   color: #666666;
+  animation: fonction-i 2000ms linear backwards infinite alternate paused;
+}
+.fonctionnement ol i--1 {
+  animation-delay: 666.6666666667ms;
+}
+.fonctionnement ol i--2 {
+  animation-delay: 1333.3333333333ms;
+}
+.fonctionnement ol i--3 {
+  animation-delay: 2000ms;
 }
 .fonctionnement ol p {
   display: inline;
