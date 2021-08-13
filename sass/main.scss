@@ -6,6 +6,43 @@
 @import "./utils/functions";
 @import "./base/base";
 @import "./utils/keyframes";
+
+.load {
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	font-family: $police-titre;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	align-content: center;
+    animation: invisible 0s 3000ms forwards;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    &__lettre {
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+        height: 100%;
+		animation: lettres 1000ms ease-in-out forwards infinite alternate ,
+		degrade 1500ms ease-in-out forwards infinite alternate,
+		 invisible $anim-duration backwards;
+		opacity: 0;
+		@for $i from 1 through $nblettre {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+             }
+        }
+		&__spinner{
+			position: absolute;
+		}
+    }
+}
 .localisation {
 	display: flex;
 	align-items: center;
@@ -238,7 +275,6 @@
 		display: flex;
 		width: 98%;
 		height: 75px;
-		position: relative;
 		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
 		border-radius: 23px;
 		background-color: white;
@@ -264,38 +300,38 @@
 			box-shadow: $shadow;
 		}
 		&:hover .menu__anim {
-			transform: translate(-110%);
+				margin: 0;
 			& i {
 				transform: rotate(1turn);
 			}
 		}
-		&:hover .menu__prix {
-			transform: translate(-50%)
-		}
 	}
 	&__anim {
-		flex: 1;
+		margin-right: -70px;
+		width: 65px;
 		background-color: $color-tertiary;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 0 21px 21px 0;
-		margin-right: -22%;
-		transition: all 1000ms;
-		transition-timing-function: ease-in-out;
+		transition: all 1000ms ease-in-out;
 		i {
 			font-size: 1.5em;
 			color: white;
-			transform: rotate(-180deg);
-			transition: all 1000ms 100ms ease-in-out;
+			transform: rotate(180deg);
+			transition: all 500ms 300ms ease-in-out;
 		}
 	}
 	&__texte {
-		width: 60%;
+		flex: 1;
 		margin-left: 20px;
     	display: flex;
     	flex-direction: column;
     	justify-content: space-evenly;
+		transition: all 500ms ease-in-out;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 		p {
 			font-size: .9em;
 			text-overflow: ellipsis;
@@ -304,7 +340,6 @@
 		}
 	}
 	&__prix {
-		flex: 2;
 		margin-bottom: 10px;
 		margin-right: 10px;
 		display: flex;
@@ -314,7 +349,7 @@
 		transition: all 1000ms;
 		transition-timing-function: ease-in-out;
 		p {
-			margin-right: 10%;
+			margin-right: 10px;
 		}
 	}
 	.commander {
@@ -328,9 +363,5 @@
 		
 		}
 	}
-}
-.corps {
-	animation: overflow-body .01s 1.5s both;
-	@include loading-spinner;
 }
 

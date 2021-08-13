@@ -18,3 +18,57 @@
         margin-top: 0%;
     }
 }
+
+@keyframes lettres {
+    0% {
+        font-size: 0em;
+        
+    }
+   
+    100% {
+        font-size: 5em;
+    }
+}
+@keyframes invisible {
+    0% {
+        background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+        visibility: visible;
+        display: contents;
+        opacity: 0;
+    }
+    100% {
+        background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+        visibility: hidden;
+        display: none;
+        opacity: 1;
+    }
+}
+@keyframes degrade {
+    0% {
+        background: linear-gradient( 1deg, $color-tertiary, $color-secondary, $color-primary);
+    }
+    25% {
+        background: linear-gradient( 360deg, $color-tertiary, $color-secondary, $color-primary);
+    }
+    50% {
+        background: linear-gradient( 1deg,$color-secondary, $color-primary,$color-tertiary);
+    }
+    75% {
+        background: linear-gradient( 360deg, $color-primary, $color-tertiary, $color-secondary);
+    }
+    100%{
+        background: linear-gradient( 1deg, $color-secondary ,$color-tertiary, $color-primary);
+    } 
+}
+@keyframes shadowanim {
+    0% {
+        text-shadow: 5px 5px lighten($color: black, $amount: 30%);
+    }
+    100% {
+        text-shadow: 5px 50px lighten($color: black, $amount: 30%);
+    }
+}
