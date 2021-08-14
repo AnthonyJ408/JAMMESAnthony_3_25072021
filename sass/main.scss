@@ -117,7 +117,7 @@
 		transform: scale(1);
 		transition: all 300ms ease-in-out;
 		&:hover {
-			box-shadow: 5px 5px 15px lighten($color: black, $amount: 70%), -5px -5px 15px lighten($color: black, $amount: 70%);
+			
 			transform: scale(1.05);
 		}
 		&--new {
@@ -343,7 +343,6 @@
 		}
 		&:hover {
 			cursor: pointer;
-			box-shadow: $shadow;
 		}
 		&:hover .menu__anim {
 			margin: 0;
@@ -360,12 +359,12 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 0 21px 21px 0;
-		transition: all 1000ms ease-in-out;
+		transition: all 500ms ease-in-out;
 		i {
 			font-size: 1.5em;
 			color: white;
 			transform: rotate(180deg);
-			transition: all 500ms 300ms ease-in-out;
+			transition: all 300ms 200ms ease-in-out;
 		}
 	}
 	&__texte {

@@ -387,7 +387,6 @@ h3 {
   transition: all 300ms ease-in-out;
 }
 .restaurant__article:hover {
-  box-shadow: 5px 5px 15px #b3b3b3, -5px -5px 15px #b3b3b3;
   transform: scale(1.05);
 }
 .restaurant__article--new {
@@ -690,20 +689,19 @@ h3 {
   transform-origin: bottom;
 }
 .menu__carte--1 {
-  animation: carte-anim 600ms 200ms ease-out both;
+  animation: carte-anim 600ms 3200ms ease-out both;
 }
 .menu__carte--2 {
-  animation: carte-anim 600ms 400ms ease-in-out both;
+  animation: carte-anim 600ms 3400ms ease-in-out both;
 }
 .menu__carte--3 {
-  animation: carte-anim 600ms 600ms ease-in-out both;
+  animation: carte-anim 600ms 3600ms ease-in-out both;
 }
 .menu__carte--4 {
-  animation: carte-anim 600ms 800ms ease-in-out both;
+  animation: carte-anim 600ms 3800ms ease-in-out both;
 }
 .menu__carte:hover {
   cursor: pointer;
-  box-shadow: 2px 2px 2px #b3b3b3, -2px -2px 2px #b3b3b3;
 }
 .menu__carte:hover .menu__anim {
   margin: 0;
@@ -719,13 +717,13 @@ h3 {
   justify-content: center;
   align-items: center;
   border-radius: 0 21px 21px 0;
-  transition: all 1000ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 .menu__anim i {
   font-size: 1.5em;
   color: white;
   transform: rotate(180deg);
-  transition: all 500ms 300ms ease-in-out;
+  transition: all 300ms 200ms ease-in-out;
 }
 .menu__texte {
   flex: 1;
