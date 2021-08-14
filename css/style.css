@@ -60,7 +60,29 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
 }
-body html, body body, body p, body ol, body ul, body li, body dl, body dt, body dd, body blockquote, body figure, body fieldset, body legend, body textarea, body pre, body iframe, body hr, body h1, body h2, body h3, body h4, body h5, body h6 {
+body html,
+body body,
+body p,
+body ol,
+body ul,
+body li,
+body dl,
+body dt,
+body dd,
+body blockquote,
+body figure,
+body fieldset,
+body legend,
+body textarea,
+body pre,
+body iframe,
+body hr,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
   margin: 0;
   padding: 0;
 }
@@ -225,8 +247,11 @@ h3 {
     color: #9356DC;
   }
 }
-.container {
+.commander, .titre, .entete img, .entete, .fonctionnement ol p, .fonctionnement ol, .restaurant__img img, .restaurant__img, .restaurant__nav, .localisation, .gridpage, .load, .container {
   width: 100%;
+}
+
+.container {
   height: 100%;
   position: fixed;
   top: 0;
@@ -237,13 +262,12 @@ h3 {
   justify-content: center;
   align-items: center;
   align-content: center;
-  z-index: 5;
+  z-index: 2;
   background: #e8f9f5;
   animation: invisible 0s 3000ms forwards;
 }
 
 .load {
-  width: 100%;
   height: 30%;
   position: absolute;
   font-family: "Shrikhand", cursive;
@@ -254,10 +278,10 @@ h3 {
   animation: loading-spinner 1500ms linear;
 }
 .load__lettre {
-  align-content: center;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  align-content: center;
   height: 100%;
   animation: lettres 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible 1500ms both, loading-movement 1000ms ease-in-out forwards infinite alternate;
   opacity: 0;
@@ -329,7 +353,6 @@ h3 {
 .gridpage {
   grid-template-columns: 1fr;
   display: grid;
-  width: 100%;
 }
 @media (min-width: 1024px) {
   .gridpage {
@@ -346,17 +369,17 @@ h3 {
 
 .localisation {
   display: flex;
+  justify-content: center;
   align-items: center;
+  align-content: center;
   font-size: 1.2em;
   color: #404040;
   background-color: #e6e6e6;
-  width: 100%;
-  justify-content: center;
   box-shadow: inset 0px 4px 5px -4px #404040;
   padding: 20px 0 20px 0;
 }
 .localisation p {
-  padding-left: 15px;
+  padding: 0 0 0 15px;
   font-weight: 500;
 }
 
@@ -365,10 +388,8 @@ h3 {
   padding: 5% 0 5% 0;
 }
 .restaurant__nav {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
 }
 @media (min-width: 799px) {
   .restaurant__nav {
@@ -401,12 +422,10 @@ h3 {
   font-size: 1em;
 }
 .restaurant__img {
-  width: 100%;
   height: 65%;
 }
 .restaurant__img img {
   height: 100%;
-  width: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
@@ -419,7 +438,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-left: 20px;
+  padding: 0 0 0 20px;
 }
 .restaurant__texte p {
   font-size: 1em;
@@ -473,15 +492,14 @@ h3 {
   font-size: 1.7em;
   width: 60%;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  margin: 40px 0 20px 0;
 }
 .welcome P {
   width: 70%;
   text-align: center;
   font-size: 1.3em;
   color: #333333;
-  margin: 0px 0px 40px 0px;
+  margin: 0 0 40px 0;
   font-weight: 300;
 }
 .welcome__button {
@@ -502,7 +520,7 @@ h3 {
   box-shadow: 5px 5px 10px #cccccc;
   opacity: 1;
   width: unset;
-  margin-bottom: 6rem;
+  margin: 0 0 6rem 0;
 }
 .welcome__button:hover {
   background: linear-gradient(to bottom right, #9356DC, #FF79DA);
@@ -511,8 +529,7 @@ h3 {
 }
 
 .fonctionnement {
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin: 50px 0 80px 0;
 }
 .fonctionnement ol {
   list-style: none;
@@ -522,9 +539,9 @@ h3 {
   margin-inline-start: unset;
   margin-inline-end: unset;
   padding-inline-start: unset;
-  width: 100%;
 }
 .fonctionnement ol:hover .ordre {
+  cursor: pointer;
   animation: fonction-anim 1000ms linear backwards;
 }
 .fonctionnement ol:hover .ordre--1 {
@@ -563,8 +580,7 @@ h3 {
 }
 .fonctionnement ol p {
   display: inline;
-  margin-left: 7%;
-  width: 100%;
+  margin: 0 0 0 7%;
   font-weight: 500;
 }
 .fonctionnement ol .liste {
@@ -578,17 +594,16 @@ h3 {
 }
 
 .entete {
-  width: 100%;
   height: 30rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: -5rem;
+  align-items: center;
+  margin: 0 0 -5rem 0;
 }
 .entete img {
   object-fit: cover;
   z-index: 1;
   height: 100%;
-  width: 100%;
 }
 
 .titre {
@@ -599,9 +614,8 @@ h3 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 1rem;
+  padding: 1rem 0 0 0;
   background-color: #f0f0f0;
-  width: 100%;
 }
 @media (min-width: 799px) and (max-width: 1024px) {
   .titre {
@@ -648,7 +662,7 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 .titre h2 {
-  margin-left: 2%;
+  margin: 0 0 0 2%;
   width: 87%;
 }
 
@@ -664,7 +678,7 @@ h3 {
 }
 .menu h5 {
   font-size: 1.1em;
-  margin-bottom: 1%;
+  margin: 0 0 1% 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -683,7 +697,9 @@ h3 {
   box-shadow: 5px 5px 10px #cccccc;
   border-radius: 23px;
   background-color: white;
+  text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
   white-space: nowrap;
   opacity: 1;
   transform-origin: bottom;
@@ -710,12 +726,13 @@ h3 {
   transform: rotate(1turn);
 }
 .menu__anim {
-  margin-right: -70px;
+  margin: 0 -70px 0 0;
   width: 65px;
   background-color: #99E2D0;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   border-radius: 0 21px 21px 0;
   transition: all 500ms ease-in-out;
 }
@@ -727,7 +744,7 @@ h3 {
 }
 .menu__texte {
   flex: 1;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -739,12 +756,13 @@ h3 {
 .menu__texte p {
   font-size: 0.9em;
   text-overflow: ellipsis;
+  text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
   white-space: nowrap;
 }
 .menu__prix {
-  margin-bottom: 10px;
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -753,15 +771,16 @@ h3 {
   transition-timing-function: ease-in-out;
 }
 .menu__prix p {
-  margin-right: 10px;
+  margin: 0 10px 0 0;
 }
 
 .commander {
   display: flex;
-  width: 100%;
-  height: 75px;
   justify-content: center;
-  padding-top: 50px;
+  align-items: center;
+  align-content: center;
+  height: 75px;
+  padding: 50px 0 0 0;
   background-color: #f0f0f0;
 }
 .commander .button {

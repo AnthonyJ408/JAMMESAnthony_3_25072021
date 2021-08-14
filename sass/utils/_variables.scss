@@ -1,18 +1,29 @@
 $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
-$police-titre:'Shrikhand', cursive;
-$police-texte:'Roboto', sans-serif;
+$police-titre:'Shrikhand',
+cursive;
+$police-texte:'Roboto',
+sans-serif;
 $nblettre:8;
-$anim-duration: 1500ms;
-$anim-durationbis:1000ms;
 $nbli:3;
-$anim-delay: $anim-duration / $nblettre;
-$anim-delaybis: $anim-durationbis / $nbli;
+$timing: ( 1: 1500ms, 2: 1000ms, 3: 500ms, 4: 300ms, 5: 200ms, 6: 3000ms, );
+$anim-delay: map-get($timing, 1) / $nblettre;
+$anim-delaybis: map-get($timing, 2) / $nbli;
 $color-background:lighten($color: black, $amount: 94%);
-$shadow:2px 2px 2px lighten($color: black, $amount: 70%), -2px -2px 2px lighten($color: black, $amount: 70%);
-$apparition1: carte-anim 600ms 3200ms ease-out both;
-$apparition2: carte-anim 600ms 3400ms ease-in-out both;
-$apparition3: carte-anim 600ms 3600ms ease-in-out both;
-$apparition4: carte-anim 600ms 3800ms ease-in-out both;
-
+$color-boxshadow: lighten($color: black, $amount: 80%);
+$shadow:2px 2px 2px lighten($color: black, $amount: 70%),
+-2px -2px 2px lighten($color: black, $amount: 70%);
+$apparition: (1:carte-anim 600ms 3200ms ease-out both, 2:carte-anim 600ms 3400ms ease-in-out both, 3:carte-anim 600ms 3600ms ease-in-out both, 4:carte-anim 600ms 3800ms ease-in-out both);
+$hauteur: ( 1: 100%, 2: 65%, 3: 35%, 4: 30%, 5: 375px, 6: 300px, 7: 250px, 8: 75px, 9: 35px, 10: 30rem);
+$width: ( 1: 70%, 2: 90%, 3: 60%, 4: unset, 5: 82%, 6: 35px, 7: 87%, 8: 96%, 9: 98%, 10: 65px, );
+$positionnement: ( 1: fixed, 2: absolute, 3: relative, );
+$accel: ( 1: linear, 2: ease-in-out, );
+$ajustement-anim: ( 1: forwards, 2: forwards infinite alternate, 3: backwards, 4: both, );
+$display: ( 1: grid, 2: flex, 3: inline, );
+$index: ( 1: 1, 2: 2, );
+$taille-police: ( h4: 1.2em, p: 1em, h2: 1.7em, welcome: 1.3em, h5: 1.1em, def: .9em, i: 1.5em);
+$margin: ( 1: 5%, 2: 40px 0 20px 0, 3: 0 0 40px 0, 4: 0 0 6rem 0, 5: 50px 0 80px 0, 6: 30px 5% 30px 5%, 7: 0 0 0 7%, 8: 0 0 -5rem 0, 9: 0 0 0 2%, 10: 0 0 1% 0, 11: 0 -70px 0 0, 12: 0, 13: 0 0 0 20px, 14: 0 10px 10px 0, 15: 0 10px 0 0, );
+$padding: ( 1: 20px 0 20px 0, 2: 0 0 0 15px, 3: 5% 0 5% 0, 4: 10px 15px 10px 15px, 5: 0 0 0 20px, 6: 20px 4% 20px 4%, 7: .4rem .7rem .4rem .7rem, 8: 1rem 0 0 0, 9: 20px, 10: 2%, 11: 50px 0 0 0, );
+$border-radius: ( 1: 20px, 2: 5px, 3: 20px 20px 0px 0px, 4: 0 0 23px 23px, 5: 30px, 6: 100%, 7: 25px 25px 0 0, 8: 23px, 9: 0 21px 21px 0, );
+$font-weight: ( 1: 500, 2: 600, 3: 300, 4: 400, );

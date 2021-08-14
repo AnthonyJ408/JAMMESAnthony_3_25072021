@@ -31,7 +31,7 @@
 	transition: text-shadow 400ms ease-in-out;
 	&:hover {
 		cursor: pointer;
-		&::after  {
+		&::after {
 			transform: scale(1.01);
 			opacity: 1;
 		}
@@ -55,9 +55,69 @@
 		-webkit-text-fill-color: transparent;
 	}
 }
+
 @mixin reset {
-	html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+	html,
+	body,
+	p,
+	ol,
+	ul,
+	li,
+	dl,
+	dt,
+	dd,
+	blockquote,
+	figure,
+	fieldset,
+	legend,
+	textarea,
+	pre,
+	iframe,
+	hr,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		margin: 0;
 		padding: 0;
 	}
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+@mixin flex-column-space {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+@mixin flex-column-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@mixin flex-row-center {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+@mixin flex-end {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+@mixin overflow {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }

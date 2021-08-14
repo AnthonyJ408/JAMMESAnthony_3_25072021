@@ -5,40 +5,33 @@
 @import "./utils/mixins";
 @import "./base/base";
 @import "./utils/keyframes";
+@import "./utils/extensions";
+// Loading spinner
 .container {
-	width: 100%;
-	height: 100%;
-	position: fixed;
+	@extend %largeur;
+	height: map-get($hauteur, 1);
+	position: map-get($positionnement, 1);
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	z-index: 5;
+	@include flex-center;
+	z-index: map-get($index, 2);
 	background: lighten($color: $color-tertiary, $amount: 20%);
-	animation: invisible 0s 3000ms forwards;
+	animation: invisible 0s map-get($timing, 6) map-get($ajustement-anim, 1);
 }
 
 .load {
-	width: 100%;
-	height: 30%;
-	position: absolute;
+	@extend %largeur;
+	height: map-get($hauteur, 4);
+	position: map-get($positionnement, 2);
 	font-family: $police-titre;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	animation: loading-spinner 1500ms linear;
+	@include flex-center;
+	animation: loading-spinner map-get($timing, 1) map-get($accel, 1);
 	&__lettre {
-		align-content: center;
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		height: 100%;
-		animation: lettres 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible $anim-duration both, loading-movement 1000ms ease-in-out forwards infinite alternate;
+		@include flex-center;
+		height: map-get($hauteur, 1);
+		animation: lettres map-get($timing, 2) map-get($accel, 2) map-get($ajustement-anim, 1), degrade map-get($timing, 1) map-get($accel, 2) map-get($ajustement-anim, 2), invisible map-get($timing, 1) map-get($ajustement-anim, 4), loading-movement map-get($timing, 2) map-get($accel, 2) map-get($ajustement-anim, 2);
 		opacity: 0;
 		@for $i from 1 through $nblettre {
 			&--#{$i} {
@@ -46,7 +39,7 @@
 			}
 		}
 		@media (min-width: 799px) {
-			animation: lettrespc 1000ms ease-in-out forwards, degrade 1500ms ease-in-out forwards infinite alternate, invisible $anim-duration both, loading-movement 1000ms ease-in-out forwards infinite alternate;
+			animation: lettrespc map-get($timing, 2) map-get($accel, 2) map-get($ajustement-anim, 1), degrade map-get($timing, 1) map-get($accel, 2) map-get($ajustement-anim, 2), invisible map-get($timing, 1) map-get($ajustement-anim, 4), loading-movement map-get($timing, 2) map-get($accel, 2) map-get($ajustement-anim, 2);
 			@for $i from 1 through $nblettre {
 				&--#{$i} {
 					animation-delay: $anim-delay * $i;
@@ -55,10 +48,10 @@
 		}
 	}
 }
-
+// Page responsive
 .grid {
 	grid-template-columns: 1fr;
-	display: grid;
+	display: map-get($display, 1);
 	@media (min-width: 799px) {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -66,97 +59,92 @@
 
 .gridpage {
 	grid-template-columns: 1fr;
-	display: grid;
-	width: 100%;
+	display: map-get($display, 1);
+	@extend %largeur;
 	@media (min-width: 1024px) {
 		grid-template-columns: 1fr 1fr 1fr;
 		background-color: $color-background;
 	}
 	@media (min-width:799px) and (max-width:1024px) {
 		background-color: $color-background;
-		width: 70%;
+		width: map-get($width, 1);
 	}
 }
-
+//Index.html:Ville-->Paris,Belleville
 .localisation {
-	display: flex;
-	align-items: center;
-	font-size: 1.2em;
+	@include flex-center;
+	font-size: map-get( $taille-police, h4);
 	color: lighten(black, 25%);
 	background-color: lighten($color: black, $amount: 90%);
-	width: 100%;
-	justify-content: center;
+	@extend %largeur;
 	box-shadow: inset 0px 4px 5px -4px #404040;
-	padding: 20px 0 20px 0;
+	padding: map-get($padding, 1);
 	& p {
-		padding-left: 15px;
-		font-weight: 500;
+		padding: map-get($padding, 2);
+		font-weight: map-get($font-weight, 1);
 	}
 }
-
+// Index.html: Carte Restaurants
 .restaurant {
-	background-color: lighten($color: black, $amount: 94%);
-	padding: 5% 0 5% 0;
+	background-color: $color-background;
+	padding: map-get($padding, 3);
 	&__nav {
-		width: 100%;
-		display: grid;
+		@extend %largeur;
+		display: map-get($display, 1);
 		grid-template-columns: 1fr;
-		width: 100%;
+		@extend %largeur;
 		@media (min-width: 799px) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}
 	&__article {
-		display: flex;
-		width: 90%;
-		position: relative;
-		margin: 5%;
-		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
-		border-radius: 20px;
-		height: 250px;
+		display: map-get($display, 2);
+		width: map-get($width, 2);
+		position: map-get($positionnement, 3);
+		margin: map-get($margin, 1);
+		box-shadow: 5px 5px 10px $color-boxshadow;
+		border-radius: map-get($border-radius, 1);
+		height: map-get($hauteur, 7);
 		transform: scale(1);
-		transition: all 300ms ease-in-out;
+		transition: all map-get($timing, 4) map-get($accel, 2);
 		&:hover {
-			
 			transform: scale(1.05);
 		}
 		&--new {
-			position: absolute;
+			position: map-get($positionnement, 2);
 			top: 7%;
 			right: 2%;
 			color: darken($color: $color-tertiary, $amount: 30%);
 			background-color: lighten($color: $color-tertiary, $amount: 5%);
-			padding: 10px 15px 10px 15px;
-			border-radius: 5px;
-			font-weight: 600;
-			font-size: 1em;
+			padding: map-get($padding, 4);
+			border-radius: map-get($border-radius, 2);
+			font-weight: map-get($font-weight, 2);
+			font-size: map-get( $taille-police, p);
 		}
 	}
 	&__img {
-		width: 100%;
-		height: 65%;
+		@extend %largeur;
+		height: map-get($hauteur, 2);
 		& img {
-			height: 100%;
-			width: 100%;
+			height: map-get($hauteur, 1);
+			@extend %largeur;
 			object-fit: cover;
-			border-radius: 20px 20px 0px 0px;
+			border-radius: map-get($border-radius, 3);
 		}
 	}
 	&__texte {
-		height: 35%;
+		height: map-get($hauteur, 3);
 		color: black;
-		position: relative;
+		position: map-get($positionnement, 3);
 		background-color: white;
-		border-radius: 0 0 23px 23px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		padding-left: 20px;
+		border-radius: map-get($border-radius, 4);
+		@include flex-column-space;
+		padding: map-get($padding, 5);
 		p {
-			font-size: 1em;
+			font-size: map-get( $taille-police, p);
 		}
 		div {
-			position: absolute;
+			position: map-get($positionnement, 2);
 			right: 6%;
 			top: 30%;
 			i {
@@ -165,37 +153,34 @@
 		}
 	}
 }
-
+// Index.html: Présentation
 .welcome {
-	background-color: lighten($color: black, $amount: 94%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	background-color: $color-background;
+	@include flex-column-center;
 	h2 {
-		font-size: 1.7em;
-		width: 60%;
+		font-size: map-get( $taille-police, h2);
+		width: map-get($width, 3);
 		text-align: center;
-		margin-bottom: 20px;
-		margin-top: 40px;
+		margin: map-get($margin, 2);
+		;
 	}
 	P {
-		width: 70%;
+		width: map-get($width, 1);
 		text-align: center;
-		font-size: 1.3em;
+		font-size: map-get( $taille-police, welcome);
 		color: lighten($color: black, $amount: 20%);
-		margin: 0px 0px 40px 0px;
-		font-weight: 300;
+		margin: map-get($margin, 3);
+		font-weight: map-get($font-weight, 3);
 	}
 	&__button {
 		@include button;
-		width: unset;
-		margin-bottom: 6rem;
+		width: map-get($width, 4);
+		margin: map-get($margin, 4);
 	}
 }
-
+// Index.html: Fonctionement
 .fonctionnement {
-	margin-top: 50px;
-	margin-bottom: 80px;
+	margin: map-get($margin, 5);
 	ol {
 		list-style: none;
 		margin-block-start: unset;
@@ -204,16 +189,18 @@
 		margin-inline-start: unset;
 		margin-inline-end: unset;
 		padding-inline-start: unset;
-		width: 100%;
+		@extend %largeur;
+		// Animation etapes
 		&:hover .ordre {
-			animation: fonction-anim $anim-durationbis linear backwards;
+			cursor: pointer;
+			animation: fonction-anim map-get($timing, 2) map-get($accel, 1) map-get($ajustement-anim, 3);
 			@for $i from 1 through $nbli {
 				&--#{$i} {
 					animation-delay: $anim-delaybis * $i;
 				}
 			}
 			& i {
-				animation: fonction-i $anim-durationbis linear backwards;
+				animation: fonction-i map-get($timing, 2) map-get($accel, 1) map-get($ajustement-anim, 3);
 				@for $i from 1 through $nbli {
 					&--#{$i} {
 						animation-delay: $anim-delaybis * $i;
@@ -222,189 +209,177 @@
 			}
 		}
 		& .ordre {
-			width: 82%;
-			margin: 30px 5% 30px 5%;
-			padding: 20px 4% 20px 4%;
-			box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
-			border-radius: 30px;
-			font-size: 1.2em;
+			width: map-get($width, 5);
+			margin: map-get($margin, 6);
+			padding: map-get($padding, 6);
+			box-shadow: 5px 5px 10px $color-boxshadow;
+			border-radius: map-get($border-radius, 5);
+			font-size: map-get( $taille-police, h4);
 			background-color: lighten($color: black, $amount: 95%);
 		}
 		i {
-			font-size: 1.3em;
+			font-size: map-get( $taille-police, welcome);
 			color: lighten($color: black, $amount: 40%);
 		}
 		p {
-			display: inline;
-			margin-left: 7%;
-			width: 100%;
-			font-weight: 500;
+			display: map-get($display, 3);
+			margin: map-get($margin, 7);
+			@extend %largeur;
+			font-weight: map-get($font-weight, 1);
 		}
 		& .liste {
 			background-color: $color-primary;
 			color: white;
-			padding: .4rem .7rem .4rem .7rem;
-			border-radius: 100%;
-			position: relative;
+			padding: map-get($padding, 7);
+			border-radius: map-get($border-radius, 6);
+			position: map-get($positionnement, 3);
 			left: -6%;
 			margin-left: unset;
 		}
 	}
 }
-
+// Pages menu: Titres+ Images
 .entete {
-	width: 100%;
-	height: 30rem;
-	display: flex;
-	flex-direction: column;
-	margin-bottom: -5rem;
+	@extend %largeur;
+	height: map-get($hauteur, 10);
+	@include flex-column-center;
+	margin: map-get($margin, 8);
 	img {
 		object-fit: cover;
-		z-index: 1;
-		height: 100%;
-		width: 100%;
+		z-index: map-get($index, 1);
+		height: map-get($hauteur, 1);
+		@extend %largeur;
 	}
 }
 
 .titre {
 	font-family: $police-titre;
-	z-index: 1;
-	height: 100%;
-	border-radius: 25px 25px 0 0;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding-top: 1rem;
+	z-index: map-get($index, 1);
+	height: map-get($hauteur, 1);
+	border-radius: map-get($border-radius, 7);
+	@include flex-row-center;
+	padding: map-get($padding, 8);
 	background-color: $color-background;
-	width: 100%;
+	@extend %largeur;
 	@media (min-width: 799px) and (max-width:1024px) {
-		width: 70%;
+		width: map-get($width, 1);
 	}
+	// Icone like
 	.coeur {
-		width: 35px;
-		height: 35px;
-		padding: 20px;
-		z-index: 1;
+		width: map-get($width, 6);
+		height: map-get($hauteur, 9);
+		padding: map-get($padding, 9);
+		z-index: map-get($index, 1);
 	}
 	i {
 		@include coeur;
 	}
 	h2 {
-		margin-left: 2%;
-		width: 87%
+		margin: map-get($margin, 9);
+		width: map-get($width, 7);
 	}
 }
-
+// Hauteur modifié pour les 4 entrées de la note enchantée
 #menugrand {
-	height: 375px;
+	height: map-get($hauteur, 5);
 }
-
+// Pages menu: cartes repas
 .menu {
 	background-color: $color-background;
-	padding: 2%;
-	width: 96%;
-	height: 300px;
+	padding: map-get($padding, 10);
+	width: map-get($width, 8);
+	height: map-get($hauteur, 6);
 	h5 {
-		font-size: 1.1em;
-		margin-bottom: 1%;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
+		font-size: map-get( $taille-police, h5);
+		margin: map-get($margin, 10);
+		@include overflow;
 	}
 	h4 {
 		color: lighten(black, 15%);
-		font-weight: 400;
+		font-weight: map-get($font-weight, 4);
 		border-bottom: 3px solid $color-tertiary;
-		width: 35px;
-		font-size: 1.2em;
+		width: map-get($width, 6);
+		font-size: map-get( $taille-police, h4);
 	}
 	&__carte {
-		display: flex;
-		width: 98%;
-		height: 75px;
-		box-shadow: 5px 5px 10px lighten($color: black, $amount: 80%);
-		border-radius: 23px;
+		display: map-get($display, 2);
+		width: map-get($width, 9);
+		height: map-get($hauteur, 8);
+		box-shadow: 5px 5px 10px $color-boxshadow;
+		border-radius: map-get($border-radius, 8);
 		background-color: white;
-		overflow: hidden;
+		@include overflow;
 		white-space: nowrap;
 		opacity: 1;
 		transform-origin: bottom;
+		// Animation d'arrivée menu
 		&--1 {
-			animation: $apparition1;
+			animation: map-get($apparition, 1);
 		}
 		&--2 {
-			animation: $apparition2;
+			animation: map-get($apparition, 2);
 		}
 		&--3 {
-			animation: $apparition3;
+			animation: map-get($apparition, 3);
 		}
 		&--4 {
-			animation: $apparition4;
+			animation: map-get($apparition, 4);
 		}
 		&:hover {
 			cursor: pointer;
 		}
 		&:hover .menu__anim {
-			margin: 0;
+			margin: map-get($margin, 12);
 			& i {
 				transform: rotate(1turn);
 			}
 		}
 	}
+	// Animation de validation
 	&__anim {
-		margin-right: -70px;
-		width: 65px;
+		margin: map-get($margin, 11);
+		width: map-get($width, 10);
 		background-color: $color-tertiary;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 0 21px 21px 0;
-		transition: all 500ms ease-in-out;
+		@include flex-center;
+		border-radius: map-get($border-radius, 9);
+		transition: all map-get($timing, 3) map-get($accel, 2);
 		i {
-			font-size: 1.5em;
+			font-size: map-get( $taille-police, i);
 			color: white;
 			transform: rotate(180deg);
-			transition: all 300ms 200ms ease-in-out;
+			transition: all map-get($timing, 4) map-get($timing, 5) map-get($accel, 2);
 		}
 	}
 	&__texte {
 		flex: 1;
-		margin-left: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		transition: all 500ms ease-in-out;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
+		margin: map-get($margin, 13);
+		@include flex-column-space;
+		transition: all map-get($timing, 3) map-get($accel, 2);
+		@include overflow;
 		p {
-			font-size: .9em;
+			font-size: map-get( $taille-police, def);
 			text-overflow: ellipsis;
-			overflow: hidden;
+			@include overflow;
 			white-space: nowrap;
 		}
 	}
 	&__prix {
-		margin-bottom: 10px;
-		margin-right: 10px;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
-		font-weight: 600;
-		transition: all 1000ms;
-		transition-timing-function: ease-in-out;
+		margin: map-get($margin, 14);
+		@include flex-end;
+		font-weight: map-get($font-weight, 2);
+		transition: all map-get($timing, 2);
+		transition-timing-function: map-get($accel, 2);
 		p {
-			margin-right: 10px;
+			margin: map-get($margin, 15);
 		}
 	}
 }
-
+// Pages menu: Bouton commander
 .commander {
-	display: flex;
-	width: 100%;
-	height: 75px;
-	justify-content: center;
-	padding-top: 50px;
+	@include flex-center;
+	@extend %largeur;
+	height: map-get($hauteur, 8);
+	padding: map-get($padding, 11);
 	background-color: $color-background;
 	.button {
 		@include button;
