@@ -216,7 +216,7 @@ h3 {
 }
 @-webkit-keyframes invisible {
   0% {
-    background-clip: text;
+    /* background-clip: text; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     visibility: visible;
@@ -224,7 +224,7 @@ h3 {
     opacity: 0;
   }
   100% {
-    background-clip: text;
+    /* background-clip: text; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     visibility: hidden;
@@ -234,7 +234,7 @@ h3 {
 }
 @keyframes invisible {
   0% {
-    background-clip: text;
+    /* background-clip: text; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     visibility: visible;
@@ -242,7 +242,7 @@ h3 {
     opacity: 0;
   }
   100% {
-    background-clip: text;
+    /* background-clip: text; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     visibility: hidden;
@@ -704,7 +704,7 @@ h3 {
   transition: all 400ms ease-in-out;
   text-shadow: none;
   z-index: 1;
-  background-clip: text;
+  /* background-clip: text; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -942,7 +942,7 @@ h3 {
   transition: all 400ms ease-in-out;
   text-shadow: none;
   z-index: 1;
-  background-clip: text;
+  /* background-clip: text; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
