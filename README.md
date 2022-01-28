@@ -5,7 +5,7 @@ On est chargé de créer la partie Front-end du site, on doit réaliser un MVP e
 On doit aussi réaliser les animations demandées dans brief entiérement en CSS.
 
 <p align="center">
-<img src="./images/Maquettes_ohmyfood/readme_image.png">
+<img src="./images/Maquettes_ohmyfood/images/readme_image.png">
 </p>
 
 
